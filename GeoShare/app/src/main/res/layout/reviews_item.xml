@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tv_reviews_item_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Susanth Dahal"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_reviews_item_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_reviews_item_userName"
+        android:layout_marginTop="5dp"
+        android:text="This is where the short summary of the review should come "
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_reviews_item_reviewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_reviews_item_review"
+        android:layout_marginTop="5dp"
+        android:text="14.11.2016"
+        android:textSize="14sp" />
+
+</RelativeLayout>

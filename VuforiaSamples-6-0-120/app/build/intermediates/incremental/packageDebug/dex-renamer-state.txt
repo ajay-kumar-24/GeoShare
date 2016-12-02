@@ -1,0 +1,7 @@
+#Thu Dec 01 23:25:50 PST 2016
+base.0=/Users/Indhu/Downloads/VuforiaSamples-6-0-120/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_2d0622c6e774471ce4ea973a7de2d4a43b00adab
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/Indhu/Downloads/VuforiaSamples-6-0-120/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_2568a8c480b3d8df009b9492efc9911cc4aab64a/classes.dex
+base.1=/Users/Indhu/Downloads/VuforiaSamples-6-0-120/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_2568a8c480b3d8df009b9492efc9911cc4aab64a
+file.0=/Users/Indhu/Downloads/VuforiaSamples-6-0-120/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_2d0622c6e774471ce4ea973a7de2d4a43b00adab/classes.dex

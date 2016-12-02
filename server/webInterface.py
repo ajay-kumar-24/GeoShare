@@ -3,6 +3,7 @@ import signin
 import post
 import get_nn
 from flask import jsonify
+import getfriends
 
 app = Flask(__name__)
 
@@ -32,9 +33,60 @@ def send_values():
         lat = req['lat']
         lon = req['lon']
         user_id = req['user']
-        temp = get_nn.get_nn_func(user_id,lat,lon)
+        temp = get_nn.get_nn_func(lat,lon)
         print temp
         return jsonify(results=temp)
+
+
+@app.route('/addfriends', methods=['GET'])
+def add():
+    print 'hello'
+    if request.method == 'GET':
+        req = request.args
+        user = req['user']
+        s = getfriends.add_friends()
+        print 'HI'
+        print s
+        names = []
+        fri = []
+        fr = getfriends.get_friend_id(user)
+        print 'TTT'
+        print fr
+        print fr[0][0]
+
+        fri.append(int(fr[0][0]))
+        fri.append(int(user))
+        for i in s:
+            if int(i[0]) in fri:
+                continue
+            e = getfriends.get_name(i[0])
+
+            print e[0][0]
+
+            names.append(e[0][0])
+        s = ','.join(names)
+        print s
+        return s
+
+@app.route('/getfriends', methods=['GET'])
+def get_friends():
+    if request.method == 'GET':
+        req = request.args
+        user = req['user']
+        s = getfriends.get_friend_id(user)
+        print s
+        names = []
+        for i in s:
+            print i[0]
+            e = getfriends.get_name(i[0])
+            print e
+            print e[0][0]
+
+            names.append(e[0][0])
+        s = ','.join(names)
+        print s
+        return s
+
 
 if __name__ == '__main__':
 	app.run(host = '0.0.0.0',port=8080)

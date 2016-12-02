@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="SampleAppsTheme" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
+
+    <style name="Theme.DesignDemo" parent="Base.Theme.DesignDemo" />
+
+    <style name="Base.Theme.DesignDemo" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="colorControlNormal">@android:color/white</item> <!-- sets the color of the 3 lines side menu-->
+    </style>
+
+    <style name="MyToolbarStyle">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:maxHeight">@dimen/action_bar_height</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <!-- No need for colorPrimary, colorPrimaryDark, colorAccent here
+             this should go to the AppTheme -->
+    </style>
+</resources>

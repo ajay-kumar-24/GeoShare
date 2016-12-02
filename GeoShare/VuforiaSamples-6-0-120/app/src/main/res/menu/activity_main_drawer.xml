@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_post"
+            android:icon="@drawable/ic_post"
+            android:title="@string/nav_post" />
+        <item
+            android:id="@+id/nav_view"
+            android:icon="@drawable/ic_view"
+            android:title="@string/nav_view" />
+        <item
+            android:id="@+id/nav_friends"
+            android:icon="@drawable/ic_action_user_red"
+            android:title="Friends" />
+        <item
+            android:id="@+id/nav_addfriend"
+            android:icon="@drawable/ic_action_action_account_child"
+            android:title="Add Friends" />
+
+
+    </group>
+</menu>

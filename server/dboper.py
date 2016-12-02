@@ -27,15 +27,27 @@ def add_rows(conn,post_id,user_id,post,lat,lon):
     conn.close()
     cur.close()
 
-def get_nearest_neighbor(conn,user_id,lat,lon):
+def get_nearest_neighbor(conn,lat,lon):
     cur = conn.cursor()
     coordinates = "POINT(%s %s)" % (lon,lat)
 
-    cur.execute("SELECT ST_X(geom), ST_Y(geom),post FROM posts WHERE ST_Distance_Sphere(geom, ST_MakePoint(%s,%s)) <= 0.001 * 1609.34",(lon,lat))
+    cur.execute("SELECT ST_X(geom), ST_Y(geom), post,user_id FROM posts WHERE ST_Distance_Sphere(geom, ST_MakePoint(%s,%s)) <= 2 * 1609.34 LIMIT 10",(lon,lat))
     rows = cur.fetchall()
+    #print rows
     conn.close()
     cur.close()
     return rows
 
+def get_user_name(conn,user_id):
+    cur = conn.cursor()
+    cur.execute("SELECT USERNAME FROM USERS WHERE ID ="+str(user_id))
+    rows = cur.fetchall()
+    #print rows
+    conn.close()
+    if len(rows)>0:
+        return rows[0][0]
+    else:
+        return ""
 
-#print get_nearest_neighbor(connect_db(),1,34.02222,-118.2840434)
+#print get_user_name(connect_db(),3)
+#print get_nearest_neighbor(connect_db(),34.0220826,-118.2839521)
